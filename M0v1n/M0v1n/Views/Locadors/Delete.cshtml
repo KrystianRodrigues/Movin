@@ -1,0 +1,64 @@
+﻿@model M0v1n.Models.Locador
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Locador</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeLocador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeLocador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataNascimentoLocador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataNascimentoLocador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfLocador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfLocador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.emailLocador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.emailLocador)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.senhaLocador)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.senhaLocador)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

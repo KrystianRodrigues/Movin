@@ -1,0 +1,57 @@
+﻿@model IEnumerable<M0v1n.Models.Locador>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeLocador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataNascimentoLocador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpfLocador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.emailLocador)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.senhaLocador)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeLocador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataNascimentoLocador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpfLocador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.emailLocador)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.senhaLocador)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.LocadorID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.LocadorID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.LocadorID })
+        </td>
+    </tr>
+}
+
+</table>
