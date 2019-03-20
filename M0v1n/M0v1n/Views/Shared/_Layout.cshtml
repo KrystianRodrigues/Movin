@@ -19,13 +19,30 @@
                 </button>
                 @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Sobre", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contato", "Contact", "Home")</li>
-                </ul>
-            </div>
+            @{
+                M0v1n.Models.Cliente cliente = M0v1n.Repositories.Funcoes.GetUsuario();
+                if (cliente != null)
+                {
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Estados", "Index", "Estados")</li>
+                            <li>@Html.ActionLink("Cidades", "Index", "Cidades")</li>
+                            <li>@Html.ActionLink("Clientes", "Index", "Clientes")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <script type="text/javascript"> window.location.href = "@Url.Action("AcessoNegado","Publico")";
+                    </script>
+                }
+            }
+
+            <li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
+
         </div>
     </div>
     <div class="container body-content">

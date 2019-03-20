@@ -140,6 +140,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocadorsController.cs" />
+    <Compile Include="Controllers\PublicoController.cs" />
     <Compile Include="Controllers\UsuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -148,13 +149,21 @@
     <Compile Include="Migrations\201903180145240_mooviin.Designer.cs">
       <DependentUpon>201903180145240_mooviin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201903192348250_logar.cs" />
+    <Compile Include="Migrations\201903192348250_logar.Designer.cs">
+      <DependentUpon>201903192348250_logar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Locador.cs" />
     <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Funcoes.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\M0v1n.dll" />
+    <Content Include="bin\M0v1n.pdb" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -200,6 +209,9 @@
     <Content Include="Views\Usuarios\Details.cshtml" />
     <Content Include="Views\Usuarios\Edit.cshtml" />
     <Content Include="Views\Usuarios\Index.cshtml" />
+    <Content Include="Views\Publico\Logar.cshtml" />
+    <Content Include="Views\Shared\_LayoutUser.cshtml" />
+    <Content Include="Views\Publico\AcessoNegado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -220,6 +232,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201903180145240_mooviin.resx">
       <DependentUpon>201903180145240_mooviin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903192348250_logar.resx">
+      <DependentUpon>201903192348250_logar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
