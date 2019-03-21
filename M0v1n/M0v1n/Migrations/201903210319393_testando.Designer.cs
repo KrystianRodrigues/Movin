@@ -6,14 +6,14 @@ namespace M0v1n.Migrations
     using System.Data.Entity.Migrations.Infrastructure;
     using System.Resources;
     
-    [GeneratedCode("EntityFramework.Migrations", "6.0.0-20911")]
-    public sealed partial class mooviin : IMigrationMetadata
+    [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
+    public sealed partial class testando : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(mooviin));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(testando));
         
         string IMigrationMetadata.Id
         {
-            get { return "201903180145240_mooviin"; }
+            get { return "201903210319393_testando"; }
         }
         
         string IMigrationMetadata.Source

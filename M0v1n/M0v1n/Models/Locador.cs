@@ -8,10 +8,10 @@ namespace M0v1n.Models
     public class Locador
     {
         public int LocadorID { get; set; }
-        public string nomeLocador { get; set; }
-        public string dataNascimentoLocador { get; set; }
-        public string cpfLocador { get; set; }
-        public string emailLocador { get; set; }
-        public string senhaLocador { get; set; }
+        public string NomeLocador { get; set; }
+        public string DataNascimentoLocador { get; set; }
+        public string CpfLocador { get; set; }
+        public string EmailLocador { get; set; }
+        public string SenhaLocador { get; set; }
     }
 }

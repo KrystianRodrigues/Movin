@@ -1,6 +1,8 @@
 namespace M0v1n.Migrations
 {
+    using M0v1n.Models;
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -14,18 +16,23 @@ namespace M0v1n.Migrations
 
         protected override void Seed(M0v1n.Models.Context context)
         {
-            //  This method will be called after migrating to the latest version.
+            IList<Usuario> usuarios = new List<Usuario>();
+            usuarios.Add(new Usuario() { NomeUsuario = "Dumb", DataNascimentoUsuario = "01/02/1998", CpfUsuario = "12345678900", EmailUsuario = "dumb@email.com", SenhaUsuario = "123" });
+            usuarios.Add(new Usuario() { NomeUsuario = "Dumber", DataNascimentoUsuario = "02/03/1999", CpfUsuario = "12345678901", EmailUsuario = "dumb3r@email.com", SenhaUsuario = "456" });
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            foreach (Usuario usuario in usuarios)
+            {
+                context.Usuarios.AddOrUpdate(x => x.UsuarioID, usuario);
+            }
+
+            IList<Locador> locadors = new List<Locador>();
+            locadors.Add(new Locador() { NomeLocador = "Ventura", DataNascimentoLocador = "03/04/1991", CpfLocador = "12345678902", EmailLocador = "ventura@email.com", SenhaLocador = "789" });
+            locadors.Add(new Locador() { NomeLocador = "Fletcher", DataNascimentoLocador = "05/06/1992", CpfLocador = "12345678903", EmailLocador = "reede@email.com", SenhaLocador = "1011" });
+
+            foreach (Locador locador in locadors)
+            {
+                context.Locadors.AddOrUpdate(x => x.LocadorID, locador);
+            }
         }
     }
 }

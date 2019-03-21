@@ -8,10 +8,10 @@ namespace M0v1n.Models
     public class Usuario
     {
         public int UsuarioID { get; set; }
-        public string nomeUsuario { get; set; }
-        public string dataNascimentoUsuario { get; set; }
-        public string cpfUsuario { get; set; }
-        public string emailUsuario { get; set; }
-        public string senhaUsuario { get; set; }
+        public string NomeUsuario { get; set; }
+        public string DataNascimentoUsuario { get; set; }
+        public string CpfUsuario { get; set; }
+        public string EmailUsuario { get; set; }
+        public string SenhaUsuario { get; set; }
     }
 }
