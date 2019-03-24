@@ -13,7 +13,7 @@ namespace M0v1n.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201903210319393_testando"; }
+            get { return "201903242142327_testando"; }
         }
         
         string IMigrationMetadata.Source
