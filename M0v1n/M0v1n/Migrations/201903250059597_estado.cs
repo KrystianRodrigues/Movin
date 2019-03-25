@@ -3,7 +3,7 @@ namespace M0v1n.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class testando : DbMigration
+    public partial class estado : DbMigration
     {
         public override void Up()
         {

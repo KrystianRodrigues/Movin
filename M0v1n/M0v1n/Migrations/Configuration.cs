@@ -33,6 +33,14 @@ namespace M0v1n.Migrations
             {
                 context.Locadors.AddOrUpdate(x => x.LocadorID, locador);
             }
+
+            IList<Cliente> clientes = new List<Cliente>();
+            clientes.Add(new Cliente() { Email = "krystian@email.com", Senha = "1234" });
+
+            foreach (Cliente cliente in clientes)
+            {
+                context.Clientes.AddOrUpdate(x => x.ClienteID, cliente);
+            }
         }
     }
 }
