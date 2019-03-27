@@ -138,6 +138,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AnunciosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocadorsController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
@@ -145,11 +146,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201903250059597_estado.cs" />
-    <Compile Include="Migrations\201903250059597_estado.Designer.cs">
-      <DependentUpon>201903250059597_estado.cs</DependentUpon>
+    <Compile Include="Migrations\201903270010464_Anuncio.cs" />
+    <Compile Include="Migrations\201903270010464_Anuncio.Designer.cs">
+      <DependentUpon>201903270010464_Anuncio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201903270038458_qq.cs" />
+    <Compile Include="Migrations\201903270038458_qq.Designer.cs">
+      <DependentUpon>201903270038458_qq.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Anuncio.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Locador.cs" />
@@ -208,6 +214,11 @@
     <Content Include="Views\Publico\Logar.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
+    <Content Include="Views\Anuncios\Create.cshtml" />
+    <Content Include="Views\Anuncios\Delete.cshtml" />
+    <Content Include="Views\Anuncios\Details.cshtml" />
+    <Content Include="Views\Anuncios\Edit.cshtml" />
+    <Content Include="Views\Anuncios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -226,8 +237,11 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201903250059597_estado.resx">
-      <DependentUpon>201903250059597_estado.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201903270010464_Anuncio.resx">
+      <DependentUpon>201903270010464_Anuncio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201903270038458_qq.resx">
+      <DependentUpon>201903270038458_qq.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

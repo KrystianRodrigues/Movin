@@ -19,7 +19,7 @@ namespace M0v1n.Models
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Locador> Locadors { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
-
+        public DbSet<Anuncio> Anuncios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
