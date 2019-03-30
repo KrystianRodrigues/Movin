@@ -46,7 +46,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "LocadorID,nomeLocador,dataNascimentoLocador,cpfLocador,emailLocador,senhaLocador")] Locador locador)
+        public ActionResult Create([Bind(Include = "LocadorID,NomeLocador,DataNascimentoLocador,CpfLocador,EmailLocador,SenhaLocador")] Locador locador)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "LocadorID,nomeLocador,dataNascimentoLocador,cpfLocador,emailLocador,senhaLocador")] Locador locador)
+        public ActionResult Edit([Bind(Include = "LocadorID,NomeLocador,DataNascimentoLocador,CpfLocador,EmailLocador,SenhaLocador")] Locador locador)
         {
             if (ModelState.IsValid)
             {

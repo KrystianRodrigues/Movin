@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nomeLocador)
+            @Html.DisplayNameFor(model => model.NomeLocador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dataNascimentoLocador)
+            @Html.DisplayNameFor(model => model.DataNascimentoLocador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cpfLocador)
+            @Html.DisplayNameFor(model => model.CpfLocador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.emailLocador)
+            @Html.DisplayNameFor(model => model.EmailLocador)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.senhaLocador)
+            @Html.DisplayNameFor(model => model.SenhaLocador)
         </th>
         <th></th>
     </tr>
@@ -32,19 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.nomeLocador)
+            @Html.DisplayFor(modelItem => item.NomeLocador)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.dataNascimentoLocador)
+            @Html.DisplayFor(modelItem => item.DataNascimentoLocador)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.cpfLocador)
+            @Html.DisplayFor(modelItem => item.CpfLocador)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.emailLocador)
+            @Html.DisplayFor(modelItem => item.EmailLocador)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.senhaLocador)
+            @Html.DisplayFor(modelItem => item.SenhaLocador)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.LocadorID }) |

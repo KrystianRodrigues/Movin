@@ -12,19 +12,19 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nomeUsuario)
+            @Html.DisplayNameFor(model => model.NomeUsuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dataNascimentoUsuario)
+            @Html.DisplayNameFor(model => model.DataNascimentoUsuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cpfUsuario)
+            @Html.DisplayNameFor(model => model.CpfUsuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.emailUsuario)
+            @Html.DisplayNameFor(model => model.EmailUsuario)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.senhaUsuario)
+            @Html.DisplayNameFor(model => model.SenhaUsuario)
         </th>
         <th></th>
     </tr>
@@ -32,19 +32,19 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.nomeUsuario)
+            @Html.DisplayFor(modelItem => item.NomeUsuario)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.dataNascimentoUsuario)
+            @Html.DisplayFor(modelItem => item.DataNascimentoUsuario)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.cpfUsuario)
+            @Html.DisplayFor(modelItem => item.CpfUsuario)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.emailUsuario)
+            @Html.DisplayFor(modelItem => item.EmailUsuario)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.senhaUsuario)
+            @Html.DisplayFor(modelItem => item.SenhaUsuario)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioID }) |

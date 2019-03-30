@@ -46,7 +46,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UsuarioID,nomeUsuario,dataNascimentoUsuario,cpfUsuario,emailUsuario,senhaUsuario")] Usuario usuario)
+        public ActionResult Create([Bind(Include = "UsuarioID,NomeUsuario,DataNascimentoUsuario,CpfUsuario,EmailUsuario,SenhaUsuario")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
@@ -78,7 +78,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UsuarioID,nomeUsuario,dataNascimentoUsuario,cpfUsuario,emailUsuario,senhaUsuario")] Usuario usuario)
+        public ActionResult Edit([Bind(Include = "UsuarioID,NomeUsuario,DataNascimentoUsuario,CpfUsuario,EmailUsuario,SenhaUsuario")] Usuario usuario)
         {
             if (ModelState.IsValid)
             {
