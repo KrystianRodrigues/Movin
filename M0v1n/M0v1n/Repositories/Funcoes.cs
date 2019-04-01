@@ -12,10 +12,7 @@ namespace M0v1n.Repositories
         public static bool AutenticarUsuario(string login, string senha)
         {
             Context _db = new Context();
-            var query = (from u in _db.Clientes
-                         where u.Email == login &&
-                         u.Senha == senha
-                         select u).SingleOrDefault();
+            var query = (from u in _db.Clientes where u.Email == login && u.Senha == senha select u).SingleOrDefault();
             if (query == null)
             {
                 return false;
