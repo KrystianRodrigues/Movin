@@ -24,6 +24,21 @@ namespace M0v1n.Repositories
             HttpContext.Current.Session["Usuario"] = query.Email;
             return true;
         }
+        public static bool AutenticarLocador(string login, string senha)
+        {
+            Context _db = new Context();
+            var query = (from u in _db.Clientes where u.Email == login && u.Senha == senha select u).SingleOrDefault();
+            if (query == null)
+            {
+                return false;
+            }
+
+            FormsAuthentication.SetAuthCookie(query.Email, false);
+            //HttpContext.Current.Response.Cookies["Usuario"].Value = query.Email;
+            //HttpContext.Current.Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(10);
+            HttpContext.Current.Session["Usuario"] = query.Email;
+            return true;
+        }
         public static Cliente GetUsuario()
         {
             string _login = HttpContext.Current.User.Identity.Name;
