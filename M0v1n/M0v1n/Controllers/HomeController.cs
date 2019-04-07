@@ -26,5 +26,12 @@ namespace M0v1n.Controllers
 
             return View();
         }
+
+        public ActionResult FeedUser()
+        {
+            ViewBag.Message = "feed do usuario.";
+
+            return View();
+        }
     }
 }
