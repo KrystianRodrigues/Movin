@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
+    <title>@ViewBag.Title - Movin</title>
 
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -22,9 +22,10 @@
                 @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             @{
-                M0v1n.Models.Cliente cliente = M0v1n.Repositories.Funcoes.GetUsuario();
+                M0v1n.Models.Usuario usuario = M0v1n.Repositories.Funcoes.GetUsuario();
+                M0v1n.Models.Locador locador = M0v1n.Repositories.Funcoes.GetLocador();
 
-                if (cliente != null)
+                if (usuario != null || locador != null)
                 {
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">

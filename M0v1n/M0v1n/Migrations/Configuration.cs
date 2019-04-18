@@ -31,7 +31,7 @@ namespace M0v1n.Migrations
 
             foreach (Locador locador in locadors)
             {
-                context.Locadors.AddOrUpdate(x => x.LocadorID, locador);
+                context.Locadores.AddOrUpdate(x => x.LocadorID, locador);
             }
 
             IList<Cliente> clientes = new List<Cliente>();
