@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Net.Mail;
 using System.Web;
 using System.Web.Mvc;
 using M0v1n.Models;
@@ -33,6 +34,11 @@ namespace M0v1n.Controllers
                 return HttpNotFound();
             }
             return View(avaliar);
+        }
+
+        public ActionResult Confirmacao()
+        {
+            return View();
         }
 
         // GET: Avaliacoes/Create
@@ -73,18 +79,39 @@ namespace M0v1n.Controllers
             return View(avaliar);
         }
 
+
+
+
         // POST: Avaliacoes/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AvaliarID,From,To,Subject,Body")] Avaliar avaliar)
+        public ActionResult Edit([Bind(Include = "AvaliarID,From,To,Subject,Body")] Avaliar avaliar, M0v1n.Models.Avaliar _objModelMail)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(avaliar).State = EntityState.Modified;
+                db.Avaliacoes.Add(avaliar);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+
+                MailMessage mail = new MailMessage();
+                mail.To.Add(_objModelMail.To);
+                mail.From = new MailAddress(_objModelMail.From);
+                mail.Subject = _objModelMail.Subject;
+                string Body = _objModelMail.Body;
+                mail.Body = Body;
+                mail.IsBodyHtml = true;
+
+                SmtpClient smtp = new SmtpClient();
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.UseDefaultCredentials = false;
+                smtp.Credentials = new System.Net.NetworkCredential
+                ("mandajudaservico@gmail.com", "Mand@judaPI");
+                smtp.EnableSsl = true;
+                smtp.Send(mail);
+
+                return RedirectToAction("Confirmacao");
             }
             return View(avaliar);
         }
