@@ -147,9 +147,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201904290315086_aval.cs" />
-    <Compile Include="Migrations\201904290315086_aval.Designer.cs">
-      <DependentUpon>201904290315086_aval.cs</DependentUpon>
+    <Compile Include="Migrations\201905022226593_atual.cs" />
+    <Compile Include="Migrations\201905022226593_atual.Designer.cs">
+      <DependentUpon>201905022226593_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Anuncio.cs" />
@@ -312,6 +312,7 @@
     <Content Include="Views\Avaliacoes\Details.cshtml" />
     <Content Include="Views\Avaliacoes\Edit.cshtml" />
     <Content Include="Views\Avaliacoes\Index.cshtml" />
+    <Content Include="Views\Home\FeedUser.cshtml" />
     <Content Include="Views\Home\Landing.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -331,8 +332,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201904290315086_aval.resx">
-      <DependentUpon>201904290315086_aval.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905022226593_atual.resx">
+      <DependentUpon>201905022226593_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

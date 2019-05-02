@@ -13,6 +13,16 @@ namespace M0v1n.Controllers
             return View();
         }
 
+        public ActionResult Landing()
+        {
+            return View();
+        }
+
+        public ActionResult FeedUser()
+        {
+            return View();
+        }
+
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

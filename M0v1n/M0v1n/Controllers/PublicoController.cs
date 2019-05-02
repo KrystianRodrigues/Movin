@@ -23,7 +23,7 @@ namespace M0v1n.Controllers
                 ViewBag.Error = "Nome de usuário e/ou senha inválida";
                 return View();
             }
-            return RedirectToAction("Landing", "Home");
+            return RedirectToAction("Index", "Home");
         }
         public ActionResult AcessoNegado()
         {

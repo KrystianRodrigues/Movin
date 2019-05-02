@@ -19,7 +19,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Nome do aplicativo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Movin", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             @{
                 M0v1n.Models.Usuario usuario = M0v1n.Repositories.Funcoes.GetUsuario();
@@ -33,7 +33,7 @@
                             <li>@Html.ActionLink("About", "About", "Home")</li>
                             <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
 
-                            <li>@Html.ActionLink("Locadors", "Index", "Locadors")</li>
+                            <li>@Html.ActionLink("Locadores", "Index", "Locadores")</li>
                             <li>@Html.ActionLink("Usuários", "Index", "Usuarios")</li>
                             <li>@Html.ActionLink("Anúncios", "Index", "Anuncios")</li>
                             <li>@Html.ActionLink("Feed do Usuário", "FeedUser", "Home")</li>

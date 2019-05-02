@@ -34,14 +34,14 @@ namespace M0v1n.Migrations
                 context.Locadores.AddOrUpdate(x => x.LocadorID, locador);
             }
 
-            IList<Cliente> clientes = new List<Cliente>();
-            clientes.Add(new Cliente() { Email = "krystian@email.com", Senha = "1234" });
-            clientes.Add(new Cliente() { Email = "ronidigital@hotmail.com", Senha = "5340" });
+            //IList<Cliente> clientes = new List<Cliente>();
+            //clientes.Add(new Cliente() { Email = "krystian@email.com", Senha = "1234" });
+            //clientes.Add(new Cliente() { Email = "ronidigital@hotmail.com", Senha = "5340" });
 
-            foreach (Cliente cliente in clientes)
-            {
-                context.Clientes.AddOrUpdate(x => x.ClienteID, cliente);
-            }
+            //foreach (Cliente cliente in clientes)
+            //{
+            //    context.Clientes.AddOrUpdate(x => x.ClienteID, cliente);
+            //}
         }
     }
 }
