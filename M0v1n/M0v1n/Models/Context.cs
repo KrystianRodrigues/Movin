@@ -18,13 +18,16 @@ namespace M0v1n.Models
 
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Locador> Locadores { get; set; }
-        public DbSet<Anuncio> Anuncios { get; set; }
         public DbSet<Avaliar> Avaliacoes { get; set; }
+        public DbSet<Anuncio> Anuncios { get; set; }
+        public DbSet<Cancelar> Cancelacao { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
+
+
     }
 }

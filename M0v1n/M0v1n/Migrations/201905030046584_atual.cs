@@ -32,6 +32,18 @@ namespace M0v1n.Migrations
                 .PrimaryKey(t => t.AvaliarID);
             
             CreateTable(
+                "dbo.Cancelar",
+                c => new
+                    {
+                        CancelarID = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(nullable: false, unicode: false),
+                        Subject = c.String(nullable: false, unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                    })
+                .PrimaryKey(t => t.CancelarID);
+            
+            CreateTable(
                 "dbo.Locador",
                 c => new
                     {
@@ -63,6 +75,7 @@ namespace M0v1n.Migrations
         {
             DropTable("dbo.Usuario");
             DropTable("dbo.Locador");
+            DropTable("dbo.Cancelar");
             DropTable("dbo.Avaliar");
             DropTable("dbo.Anuncio");
         }

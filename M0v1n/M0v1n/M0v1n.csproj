@@ -140,6 +140,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AnunciosController.cs" />
     <Compile Include="Controllers\AvaliacoesController.cs" />
+    <Compile Include="Controllers\CancelarController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LocadoresController.cs" />
     <Compile Include="Controllers\PublicoController.cs" />
@@ -147,13 +148,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905022226593_atual.cs" />
-    <Compile Include="Migrations\201905022226593_atual.Designer.cs">
-      <DependentUpon>201905022226593_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201905030046584_atual.cs" />
+    <Compile Include="Migrations\201905030046584_atual.Designer.cs">
+      <DependentUpon>201905030046584_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Anuncio.cs" />
     <Compile Include="Models\Avaliar.cs" />
+    <Compile Include="Models\Cancelar.cs" />
     <Compile Include="Models\Context.cs" />
     <Compile Include="Models\Locador.cs" />
     <Compile Include="Models\Usuario.cs" />
@@ -245,6 +247,84 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\contactform\contactform.js" />
+    <Content Include="Content\contactform\Readme.txt" />
+    <Content Include="Content\css\nivo-slider-theme.css" />
+    <Content Include="Content\css\responsive.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\img\about\1.jpg" />
+    <Content Include="Content\img\about\2.jpg" />
+    <Content Include="Content\img\apple-touch-icon.png" />
+    <Content Include="Content\img\background\bg1.jpg" />
+    <Content Include="Content\img\background\slider1.jpg" />
+    <Content Include="Content\img\blog\1.jpg" />
+    <Content Include="Content\img\blog\2.jpg" />
+    <Content Include="Content\img\blog\3.jpg" />
+    <Content Include="Content\img\blog\4.jpg" />
+    <Content Include="Content\img\blog\5.jpg" />
+    <Content Include="Content\img\blog\6.jpg" />
+    <Content Include="Content\img\blog\b02.jpg" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\Movin-logo.jpeg" />
+    <Content Include="Content\img\portfolio\1.jpg" />
+    <Content Include="Content\img\portfolio\2.jpg" />
+    <Content Include="Content\img\portfolio\3.jpg" />
+    <Content Include="Content\img\portfolio\4.jpg" />
+    <Content Include="Content\img\portfolio\5.jpg" />
+    <Content Include="Content\img\portfolio\6.jpg" />
+    <Content Include="Content\img\preloader.gif" />
+    <Content Include="Content\img\slider\slider1 - Copy.jpg" />
+    <Content Include="Content\img\slider\slider1.jpg" />
+    <Content Include="Content\img\slider\slider2.jpg" />
+    <Content Include="Content\img\slider\slider3.jpg" />
+    <Content Include="Content\img\team\1.jpg" />
+    <Content Include="Content\img\team\2.jpg" />
+    <Content Include="Content\img\team\3.jpg" />
+    <Content Include="Content\img\team\4.jpg" />
+    <Content Include="Content\img\venubox\close.gif" />
+    <Content Include="Content\img\venubox\next.gif" />
+    <Content Include="Content\img\venubox\preload-circle.png" />
+    <Content Include="Content\img\venubox\preload-dots.png" />
+    <Content Include="Content\img\venubox\preload-ios.png" />
+    <Content Include="Content\img\venubox\preload-quads.png" />
+    <Content Include="Content\img\venubox\preload.png" />
+    <Content Include="Content\img\venubox\prev.gif" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\lib\animate\animate.css" />
+    <Content Include="Content\lib\animate\animate.min.css" />
+    <Content Include="Content\lib\appear\jquery.appear.js" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\lib\easing\easing.js" />
+    <Content Include="Content\lib\easing\easing.min.js" />
+    <Content Include="Content\lib\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\lib\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\lib\isotope\isotope.pkgd.js" />
+    <Content Include="Content\lib\isotope\isotope.pkgd.min.js" />
+    <Content Include="Content\lib\jquery\jquery.min.js" />
+    <Content Include="Content\lib\knob\jquery.knob.js" />
+    <Content Include="Content\lib\nivo-slider\css\nivo-slider.css" />
+    <Content Include="Content\lib\nivo-slider\img\arrows-2.png" />
+    <Content Include="Content\lib\nivo-slider\img\arrows.png" />
+    <Content Include="Content\lib\nivo-slider\img\arrow_left.svg" />
+    <Content Include="Content\lib\nivo-slider\img\arrow_right.svg" />
+    <Content Include="Content\lib\nivo-slider\img\bullets-2.png" />
+    <Content Include="Content\lib\nivo-slider\img\bullets.png" />
+    <Content Include="Content\lib\nivo-slider\img\loading-2.gif" />
+    <Content Include="Content\lib\nivo-slider\img\loading.gif" />
+    <Content Include="Content\lib\nivo-slider\js\jquery.nivo.slider.js" />
+    <Content Include="Content\lib\owlcarousel\owl.carousel.css" />
+    <Content Include="Content\lib\owlcarousel\owl.carousel.min.js" />
+    <Content Include="Content\lib\owlcarousel\owl.transitions.css" />
+    <Content Include="Content\lib\parallax\parallax.js" />
+    <Content Include="Content\lib\venobox\venobox.css" />
+    <Content Include="Content\lib\venobox\venobox.min.js" />
+    <Content Include="Content\lib\wow\wow.js" />
+    <Content Include="Content\lib\wow\wow.min.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -264,6 +344,15 @@
     <Content Include="bin\roslyn\VBCSCompiler.exe.config" />
     <Content Include="obj\Release\M0v1n.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Release\M0v1n.csprojAssemblyReference.cache" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\lib\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\lib\font-awesome\fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -314,6 +403,12 @@
     <Content Include="Views\Avaliacoes\Index.cshtml" />
     <Content Include="Views\Home\FeedUser.cshtml" />
     <Content Include="Views\Home\Landing.cshtml" />
+    <Content Include="Views\Cancelar\Create.cshtml" />
+    <Content Include="Views\Cancelar\Delete.cshtml" />
+    <Content Include="Views\Cancelar\Details.cshtml" />
+    <Content Include="Views\Cancelar\Edit.cshtml" />
+    <Content Include="Views\Cancelar\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutLocador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -332,8 +427,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905022226593_atual.resx">
-      <DependentUpon>201905022226593_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905030046584_atual.resx">
+      <DependentUpon>201905030046584_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
