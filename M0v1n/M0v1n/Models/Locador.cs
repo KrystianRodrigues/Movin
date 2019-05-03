@@ -13,5 +13,7 @@ namespace M0v1n.Models
         public string CpfLocador { get; set; }
         public string EmailLocador { get; set; }
         public string SenhaLocador { get; set; }
+
+        public virtual ICollection<Anuncio> Anuncios { get; set; }
     }
 }

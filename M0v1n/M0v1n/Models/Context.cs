@@ -27,7 +27,5 @@ namespace M0v1n.Models
             modelBuilder.Conventions.Remove();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
-
-
     }
 }

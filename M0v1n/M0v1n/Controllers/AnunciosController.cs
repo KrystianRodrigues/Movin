@@ -9,7 +9,6 @@ using System.Web.Mvc;
 using M0v1n.Models;
 
 namespace M0v1n.Controllers
-
 {
     public class AnunciosController : Controller
     {
@@ -18,7 +17,8 @@ namespace M0v1n.Controllers
         // GET: Anuncios
         public ActionResult Index()
         {
-            return View(db.Anuncios.ToList());
+            var anuncios = db.Anuncios.Include(a => a.Locador);
+            return View(anuncios.ToList());
         }
 
         // GET: Anuncios/Details/5
@@ -39,6 +39,7 @@ namespace M0v1n.Controllers
         // GET: Anuncios/Create
         public ActionResult Create()
         {
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador");
             return View();
         }
 
@@ -47,7 +48,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnuncioID,Descricao,Unidade,Genero,Cidade")] Anuncio anuncio)
+        public ActionResult Create([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,LocadorID")] Anuncio anuncio)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +57,7 @@ namespace M0v1n.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
             return View(anuncio);
         }
 
@@ -71,6 +73,7 @@ namespace M0v1n.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
             return View(anuncio);
         }
 
@@ -79,7 +82,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnuncioID,Descricao,Unidade,Genero,Cidade")] Anuncio anuncio)
+        public ActionResult Edit([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,LocadorID")] Anuncio anuncio)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +90,7 @@ namespace M0v1n.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
             return View(anuncio);
         }
 

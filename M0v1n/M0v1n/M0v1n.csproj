@@ -148,9 +148,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905030046584_atual.cs" />
-    <Compile Include="Migrations\201905030046584_atual.Designer.cs">
-      <DependentUpon>201905030046584_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201905030521510_atual.cs" />
+    <Compile Include="Migrations\201905030521510_atual.Designer.cs">
+      <DependentUpon>201905030521510_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Anuncio.cs" />
@@ -391,11 +391,6 @@
     <Content Include="Views\Publico\Logar.cshtml" />
     <Content Include="Views\Shared\_LayoutUser.cshtml" />
     <Content Include="Views\Publico\AcessoNegado.cshtml" />
-    <Content Include="Views\Anuncios\Create.cshtml" />
-    <Content Include="Views\Anuncios\Delete.cshtml" />
-    <Content Include="Views\Anuncios\Details.cshtml" />
-    <Content Include="Views\Anuncios\Edit.cshtml" />
-    <Content Include="Views\Anuncios\Index.cshtml" />
     <Content Include="Views\Avaliacoes\Create.cshtml" />
     <Content Include="Views\Avaliacoes\Delete.cshtml" />
     <Content Include="Views\Avaliacoes\Details.cshtml" />
@@ -409,6 +404,12 @@
     <Content Include="Views\Cancelar\Edit.cshtml" />
     <Content Include="Views\Cancelar\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutLocador.cshtml" />
+    <Content Include="Views\Shared\_LandingPage.cshtml" />
+    <Content Include="Views\Anuncios\Create.cshtml" />
+    <Content Include="Views\Anuncios\Delete.cshtml" />
+    <Content Include="Views\Anuncios\Details.cshtml" />
+    <Content Include="Views\Anuncios\Edit.cshtml" />
+    <Content Include="Views\Anuncios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -427,8 +428,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905030046584_atual.resx">
-      <DependentUpon>201905030046584_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905030521510_atual.resx">
+      <DependentUpon>201905030521510_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
