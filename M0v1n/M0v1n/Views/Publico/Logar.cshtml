@@ -7,32 +7,61 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <div class="form-horizontal">
+    @*<div class="form-horizontal">
         <hr />
-        <h3 class="text-center">@ViewBag.Error</h3>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            <label class="control-label col-md-2">
-                Email
-            </label>
-            <div>
-                <div class="col-md-10 ">
-                    <input type="text" name="email" id="email" class="form-control" />
+        <h3 class="text-center">@ViewBag.Error</h3>*@
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @*<div class="form-group">
+                <label class="control-label col-md-2">
+                    Email
+                </label>
+                <div>
+                    <div class="col-md-10 ">
+                        <input type="text" name="email" id="email" class="form-control" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-md-2">
+                    Senha
+                </label>
+                <div class="col-md-10">
+                    <input type="password" name="senha" id="senha" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Entrar" class="btn btn-default" />
+                </div>
+            </div>
+        </div>*@
+
+    <br />
+    <div class="row text-center" style="padding-top:40px;">
+        <div class="col-md-6 col-sm-6 col-xs-12">
+            <div class="well-left">
+                <div class="single-well">
+                    <a href="#">
+                        <img src="~/Content/img/movin-trans.png" class="img-responsive"/>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label class="control-label col-md-2">
-                Senha
-            </label>
-            <div class="col-md-10">
-                <input type="password" name="senha" id="senha" class="form-control" />
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Entrar" class="btn btn-default" />
-            </div>
+        <div class="form contact-form col-md-offset-6" style="padding-top:40px;">
+            <h3>Faça seu login para acessar a Movin</h3>
+            <hr />
+            <form class="contactForm">
+                <div class="form-group">
+                    <input type="text" name="email" class="form-control" id="email" placeholder="Seu Email" data-rule="email" data-msg="Digite um email válido" />
+                    <div class="validation"></div>
+                </div>
+                <div class="form-group">
+                    <input type="password" name="senha" class="form-control" id="senha" placeholder="Sua Senha" data-rule="minlen:3" data-msg="Digite uma senha válida" />
+                    <div class="validation"></div>
+                </div>
+
+                <div class="text-center"><button type="submit" value="Entrar">Entrar</button></div>
+            </form>
         </div>
     </div>
 }

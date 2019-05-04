@@ -268,10 +268,25 @@ div#preloader {
   z-index: 9;
 }
 
+.header-login {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background: #000;
+    z-index: 9;
+}
+
 .navbar-header a.navbar-brand {
   display: inline-block;
   height: 70px;
   padding: 15px 0;
+}
+
+.navbar-login a.navbar-brand {
+    display: inline-block;
+    height: 70px;
+    padding: 15px 0;
 }
 
 .main-menu ul.navbar-nav li {
@@ -1638,15 +1653,15 @@ div#preloader {
   padding: 100px;
 }
 
-.contact-form input[type="text"], .contact-form input[type="email"] {
-  background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
-  border: 1px solid #ccc;
-  border-radius: 0;
-  color: #444;
-  height: 40px;
-  margin-bottom: 16px;
-  padding-left: 20px;
-  width: 100%;
+.contact-form input[type="text"], .contact-form input[type="email"], .contact-form input[type="password"] {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    color: #444;
+    height: 40px;
+    margin-bottom: 16px;
+    padding-left: 20px;
+    width: 100%;
 }
 
 .contact-form textarea  {
