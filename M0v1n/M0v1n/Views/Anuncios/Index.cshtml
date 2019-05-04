@@ -2,182 +2,29 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAnuncios.cshtml";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Locador.NomeLocador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuartoSolteiro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuartoCasal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QuartoComunitario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QtdCama)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.QtdBanheiro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NumHospedes)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ValorDiaria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Rua)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Numero)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.UF)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Cep)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Foto1)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Foto2)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ArCondicionado)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ventilador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Banheira)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Internet)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TvCabo)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Animais)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fumante)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Locador.NomeLocador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descricao)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuartoSolteiro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuartoCasal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QuartoComunitario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QtdCama)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.QtdBanheiro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NumHospedes)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ValorDiaria)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Rua)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Bairro)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Complemento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.UF)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Cep)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto1)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto2)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ArCondicionado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ventilador)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Banheira)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Internet)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TvCabo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Animais)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fumante)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AnuncioID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AnuncioID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AnuncioID })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="single-blog">
+            <div class="single-blog-img">
+                <a href="blog-details.html">
+                    <img src=~/Content/img/blog/1.jpg alt="">
+                </a>
+            </div>
+            <div class="blog-meta">
+                @*<span class="comments-type">
+                        <i class="fa fa-comment-o"></i>
+                        <a href="#">11 comments</a>
+                    </span>*@
+            </div>
+            <div class="blog-text">
+                @Html.DisplayFor(modelItem => item.Descricao)
+                <p><strong>Locador: </strong>@Html.DisplayFor(modelItem => item.Locador.NomeLocador)</p>
+            </div>
+            @Html.ActionLink("Veja Mais", "Details", new { id = item.AnuncioID }, htmlAttributes: new { @class = "ready-btn" })
+        </div>
+    </div>
 }
-
-</table>

@@ -268,7 +268,7 @@ div#preloader {
   z-index: 9;
 }
 
-.header-login {
+.header-black {
     top: 0;
     left: 0;
     width: 100%;
@@ -283,7 +283,7 @@ div#preloader {
   padding: 15px 0;
 }
 
-.navbar-login a.navbar-brand {
+.navbar-black a.navbar-brand {
     display: inline-block;
     height: 70px;
     padding: 15px 0;

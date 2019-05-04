@@ -410,6 +410,7 @@
     <Content Include="Views\Anuncios\Details.cshtml" />
     <Content Include="Views\Anuncios\Edit.cshtml" />
     <Content Include="Views\Anuncios\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutAnuncios.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
