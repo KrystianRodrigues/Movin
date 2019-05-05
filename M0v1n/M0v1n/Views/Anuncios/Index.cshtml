@@ -16,9 +16,14 @@
             </div>
             <div class="blog-meta">
                 <span class="comments-type">
-                        <i class="fa fa-comment-o"></i>
-                        <a href="#">11 comments</a>
-                    </span>
+                    <i class="fa fa-comment-o"></i>
+                    <a href="#">11 comments</a>
+                </span>
+                <span class="comments-type" style="color:#ff0000;">
+                    <i class="fa fa-frown-o">
+                        <a>@Html.ActionLink("Reportar", "ReportarProblemas", "Anuncios", new { id = item.AnuncioID }, htmlAttributes: new { @class = "desativar" })</a>
+                    </i>
+                </span>
             </div>
            
             <div class="blog-text">

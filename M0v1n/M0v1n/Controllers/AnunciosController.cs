@@ -138,13 +138,13 @@ namespace M0v1n.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             Anuncio anuncio = db.Anuncios.Find(id);
+            Locador locador = db.Locadores.Find(anuncio.LocadorID);
             if (anuncio == null)
             {
                 return HttpNotFound();
             }
             ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
-            //return RedirectToAction("ReportarProblemas", "Anuncios");
-            return View();
+            return View(anuncio);
         }
 
         [HttpPost]
@@ -153,6 +153,18 @@ namespace M0v1n.Controllers
         {
             if (ModelState.IsValid)
             {
+                Locador locador = db.Locadores.Find(anuncio.LocadorID);
+
+                GmailEmailService gmail = new GmailEmailService();
+                EmailMessage msg = new EmailMessage();
+                msg.Body = "<!DOCTYPE HTML><html><body><p>Foi identificado um reporte de problema por um usuário.</p><p>O anúncio reportado foi " + anuncio.Descricao + ". O mesmo recebeu a seguinte mensagem: </p><p><strong>" + anuncio.Problemas + "</strong></p><p>Entre em contato com o locador para possivel aviso. <strong>" + locador.NomeLocador + "</strong> / <strong>" + locador.EmailLocador + "</strong></p><br/>Administração Movin.</p></body></html>";
+                msg.IsHtml = true;
+                msg.Subject = "REPORTE DE PROBLEMA - MOVIN";
+                msg.ToEmail = "startoupcontact@gmail.com";
+                gmail.SendEmailMessage(msg);
+
+                anuncio.Problemas = "";
+
                 db.Entry(anuncio).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
