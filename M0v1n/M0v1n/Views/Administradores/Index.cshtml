@@ -1,0 +1,39 @@
+﻿@model IEnumerable<M0v1n.Models.Administrador>
+
+@{
+    IEnumerable<M0v1n.Models.Anuncio> anuncios = (IEnumerable<M0v1n.Models.Anuncio>)ViewBag.anuncios;
+    IEnumerable<M0v1n.Models.Locador> lcoadores = (IEnumerable<M0v1n.Models.Locador>)ViewBag.locadores;
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdm.cshtml";
+}
+
+@foreach (var item in anuncios)
+{
+    <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="single-blog">
+            <div class="single-blog-img">
+                <a href="blog-details.html">
+                    <img src=~/Content/img/blog/1.jpg alt="">
+                </a>
+            </div>
+
+            <div class="blog-text">
+                @Html.DisplayFor(modelItem => item.Descricao)
+                <p><strong>Locador: </strong>@Html.DisplayFor(modelItem => item.Locador.NomeLocador)</p>
+            </div>
+            <span class="comments-type">
+                <i class="fa fa-comment-o"></i>
+                @Html.ActionLink("Ver Comentários", "Details", new { id = item.AnuncioID }, htmlAttributes: new { @class = "" })
+            </span>
+            <br />
+            <span class="comments-type" style="color:#ff0000;">
+                <i class="fa fa-frown-o"></i>
+                @Html.ActionLink("Desativar", "Edit", "Anuncios", new { id = item.AnuncioID }, htmlAttributes: new { @class = "desativar" })
+            </span>
+            <span class="comments-type" style="color:#ff0000;">
+                <i class="fa fa-trash"></i>
+                @Html.ActionLink("Excluir", "Delete", "Anuncios", new { id = item.AnuncioID }, htmlAttributes: new { @class = "desativar" })
+            </span>
+        </div>
+    </div>
+}

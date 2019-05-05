@@ -138,6 +138,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdministradoresController.cs" />
     <Compile Include="Controllers\AnunciosController.cs" />
     <Compile Include="Controllers\AvaliacoesController.cs" />
     <Compile Include="Controllers\CancelarController.cs" />
@@ -152,7 +153,16 @@
     <Compile Include="Migrations\201905030521510_atual.Designer.cs">
       <DependentUpon>201905030521510_atual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201905051443584_administrador.cs" />
+    <Compile Include="Migrations\201905051443584_administrador.Designer.cs">
+      <DependentUpon>201905051443584_administrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201905051448221_admin.cs" />
+    <Compile Include="Migrations\201905051448221_admin.Designer.cs">
+      <DependentUpon>201905051448221_admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Administrador.cs" />
     <Compile Include="Models\Anuncio.cs" />
     <Compile Include="Models\Avaliar.cs" />
     <Compile Include="Models\Cancelar.cs" />
@@ -164,6 +174,7 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\Funcoes.cs" />
+    <Compile Include="Repositories\GmailEmailService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\Antlr3.Runtime.dll" />
@@ -411,6 +422,12 @@
     <Content Include="Views\Anuncios\Edit.cshtml" />
     <Content Include="Views\Anuncios\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutAnuncios.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdm.cshtml" />
+    <Content Include="Views\Administradores\Create.cshtml" />
+    <Content Include="Views\Administradores\Delete.cshtml" />
+    <Content Include="Views\Administradores\Details.cshtml" />
+    <Content Include="Views\Administradores\Edit.cshtml" />
+    <Content Include="Views\Administradores\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -431,6 +448,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201905030521510_atual.resx">
       <DependentUpon>201905030521510_atual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051443584_administrador.resx">
+      <DependentUpon>201905051443584_administrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201905051448221_admin.resx">
+      <DependentUpon>201905051448221_admin.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

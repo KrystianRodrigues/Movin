@@ -1,0 +1,231 @@
+﻿@model M0v1n.Models.Administrador
+
+@{
+    IEnumerable<M0v1n.Models.Anuncio> anuncios = (IEnumerable<M0v1n.Models.Anuncio>)ViewBag.anuncios;
+    IEnumerable<M0v1n.Models.Locador> lcoadores = (IEnumerable<M0v1n.Models.Locador>)ViewBag.locadores;
+    ViewBag.Title = "Details";
+}
+
+@*<h2>Details</h2>
+
+@foreach (var item in anuncios)
+{
+    <div>
+        <h4>Anuncio</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Locador.NomeLocador)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Locador.NomeLocador)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoSolteiro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QuartoSolteiro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoCasal)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QuartoCasal)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoComunitario)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QuartoComunitario)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QtdCama)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QtdCama)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.QtdBanheiro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.QtdBanheiro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NumHospedes)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NumHospedes)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ValorDiaria)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Rua)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Rua)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.UF)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.UF)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Foto1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto2)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Foto2)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.ArCondicionado)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ArCondicionado)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ventilador)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ventilador)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Banheira)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Banheira)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Internet)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Internet)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.TvCabo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.TvCabo)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Animais)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Animais)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Fumante)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Fumante)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ativo)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AnuncioID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}*@

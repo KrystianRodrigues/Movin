@@ -7,22 +7,25 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using M0v1n.Models;
-using M0v1n.Repositories;
 
 namespace M0v1n.Controllers
 {
-    public class AnunciosController : Controller
+    public class AdministradoresController : Controller
     {
         private Context db = new Context();
 
-        // GET: Anuncios
+        // GET: Administradores
         public ActionResult Index()
         {
-            var anuncios = db.Anuncios.Include(a => a.Locador);
-            return View(anuncios.ToList());
+            IEnumerable<Anuncio> anuncios = db.Anuncios.ToList();
+            IEnumerable<Locador> locadores = db.Locadores.ToList();
+            ViewBag.Anuncios = anuncios;
+            ViewBag.Locadores = locadores;
+            return View();
+            //return View(db.Administradores.ToList());
         }
 
-        // GET: Anuncios/Details/5
+        // GET: Administradores/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -34,32 +37,34 @@ namespace M0v1n.Controllers
             {
                 return HttpNotFound();
             }
-            return View(anuncio);
-        }
-
-        // GET: Anuncios/Create
-        public ActionResult Create()
-        {
-            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador");
+            IEnumerable<Anuncio> anuncios = db.Anuncios.ToList();
+            IEnumerable<Locador> locadores = db.Locadores.ToList();
+            ViewBag.Anuncios = anuncios;
+            ViewBag.Locadores = locadores;
             return View();
         }
 
-        // POST: Anuncios/Create
+        // GET: Administradores/Create
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: Administradores/Create
         // Para se proteger de mais ataques, ative as propriedades específicas a que você quer se conectar. Para 
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,LocadorID")] Anuncio anuncio)
+        public ActionResult Create([Bind(Include = "AdministradorID,Nome,Email,Senha")] Administrador administrador)
         {
             if (ModelState.IsValid)
             {
-                db.Anuncios.Add(anuncio);
+                db.Administradores.Add(administrador);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
-            return View(anuncio);
+            return View(administrador);
         }
 
         // GET: Anuncios/Edit/5
@@ -116,18 +121,8 @@ namespace M0v1n.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             Anuncio anuncio = db.Anuncios.Find(id);
-            Locador locador = db.Locadores.Find(anuncio.LocadorID);
-            //Inserir envio de email de aviso ao locador
-            GmailEmailService gmail = new GmailEmailService();
-            EmailMessage msg = new EmailMessage();
-            msg.Body = "<!DOCTYPE HTML><html><body><p>Caro(a) " + locador.NomeLocador + ",</p><p>Seu anúncio " + anuncio.Descricao + " foi deletado da platafoma Movin!</p><p>Caso essa ação tenha sido feita por você desconsidere o e-mail, caso não, entre em contado com a Administração da Movin poís seu anúncio pode ter sido deletado por alguma infração as normas de uso da plataforma.<p>Atenciosamente,<br/>Administração Movin.</p></body></html>";
-            msg.IsHtml = true;
-            msg.Subject = "Anúncio Deletado - MOVIN";
-            msg.ToEmail = locador.EmailLocador;
-            gmail.SendEmailMessage(msg);
             db.Anuncios.Remove(anuncio);
             db.SaveChanges();
-
             return RedirectToAction("Index");
         }
 

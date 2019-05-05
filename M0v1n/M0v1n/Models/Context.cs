@@ -21,6 +21,7 @@ namespace M0v1n.Models
         public DbSet<Avaliar> Avaliacoes { get; set; }
         public DbSet<Anuncio> Anuncios { get; set; }
         public DbSet<Cancelar> Cancelacao { get; set; }
+        public DbSet<Administrador> Administradores { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
