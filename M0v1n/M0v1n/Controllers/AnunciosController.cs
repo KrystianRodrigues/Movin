@@ -18,7 +18,7 @@ namespace M0v1n.Controllers
         // GET: Anuncios
         public ActionResult Index()
         {
-            var anuncios = db.Anuncios.Include(a => a.Locador);
+            var anuncios = db.Anuncios.Include(a => a.Locador).Where(s => s.Ativo == true).ToList();
             return View(anuncios.ToList());
         }
 

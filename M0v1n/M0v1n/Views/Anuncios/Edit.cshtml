@@ -229,6 +229,7 @@
                 <div class="checkbox">
                     @Html.EditorFor(model => model.Ativo)
                     @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
+                    <p style="color:#ff0000">Caso queira desativar esse anúncio tire o "Ativo" desmarcado</p>
                 </div>
             </div>
         </div>
