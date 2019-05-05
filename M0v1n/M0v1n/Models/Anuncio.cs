@@ -39,6 +39,8 @@ namespace M0v1n.Models
         public bool Fumante { get; set; }
         public bool Ativo { get; set; } = true;
 
+        public string Problemas { get; set; }
+
         public int LocadorID { get; set; }
         public virtual Locador Locador { get; set; }
     }

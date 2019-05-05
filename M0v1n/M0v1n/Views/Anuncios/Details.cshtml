@@ -4,223 +4,330 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Movin</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <!-- Favicons -->
+    <link href="~/Content/img/favicon.png" rel="icon">
+    <link href="~/Content/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-<div>
-    <h4>Anuncio</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Locador.NomeLocador)
-        </dt>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700|Raleway:300,400,400i,500,500i,700,800,900" rel="stylesheet">
+    <!-- Bootstrap CSS File -->
+    <link href="~/Content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Libraries CSS Files -->
+    <link href="~/Content/lib/nivo-slider/css/nivo-slider.css" rel="stylesheet" />
+    <link href="~/Content/lib/owlcarousel/owl.carousel.css" rel="stylesheet" />
+    <link href="~/Content/lib/owlcarousel/owl.transitions.css" rel="stylesheet" />
+    <link href="~/Content/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/Content/lib/venobox/venobox.css" rel="stylesheet" />
+    <!-- Nivo Slider Theme -->
+    <link href="~/Content/css/nivo-slider-theme.css" rel="stylesheet" />
+    <!-- Main Stylesheet File -->
+    <link href="~/Content/css/style.css" rel="stylesheet" />
+    <!-- Responsive Stylesheet File -->
+    <link href="~/Content/css/responsive.css" rel="stylesheet" />
+    <!-- =======================================================
+      Theme Name: eBusiness
+      Theme URL: https://bootstrapmade.com/ebusiness-bootstrap-corporate-template/
+      Author: BootstrapMade.com
+      License: https://bootstrapmade.com/license/
+    ======================================================= -->
+</head>
+<body data-spy="scroll" data-target="#navbar-example">
+    <div id="preloader"></div>
+    <header>
+        <!-- header-area start -->
+        <div id="sticker" class="header-black">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <!-- Navigation -->
+                        <nav class="navbar navbar-default">
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".bs-example-navbar-collapse-1" aria-expanded="false">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                                <!-- Brand -->
+                                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
+                                    <h1><span>M</span>ovin</h1>
+                                    <!-- Uncomment below if you prefer to use an image logo -->
+                                    <!-- <img src="img/logo.png" alt="" title=""> -->
+                                </a>
+                            </div>
+                            <!-- Collect the nav links, forms, and other content for toggling -->
+                            <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li class="active">
+                                        <a class="page-scroll" href="#home">Home</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#blog">Blog</a>
+                                    </li>
+                                    <li>
+                                        <a class="page-scroll" href="#contact">Contato</a>
+                                    </li>
+                                    <li>
+                                        @Html.ActionLink("Entrar", "Logar", "Publico")
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
 
-        <dd>
-            @Html.DisplayFor(model => model.Locador.NomeLocador)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Descricao)
-        </dt>
+    <div>
+        <h4>Anuncio</h4>
+        <hr />
+        <span class="comments-type" style="color:#ff0000;">
+            <i class="fa fa-frown-o"></i>
+            @Html.ActionLink("Reportar Problemas", "ReportarProblemas", "Anuncios", new { id = Model.AnuncioID }, htmlAttributes: new { @class = "desativar" })
+        </span>
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Locador.NomeLocador)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Descricao)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Locador.NomeLocador)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QuartoSolteiro)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Descricao)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QuartoSolteiro)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Descricao)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QuartoCasal)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoSolteiro)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QuartoCasal)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QuartoSolteiro)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QuartoComunitario)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoCasal)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QuartoComunitario)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QuartoCasal)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QtdCama)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QuartoComunitario)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QtdCama)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QuartoComunitario)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.QtdBanheiro)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QtdCama)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.QtdBanheiro)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QtdCama)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.NumHospedes)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.QtdBanheiro)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.NumHospedes)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.QtdBanheiro)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ValorDiaria)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.NumHospedes)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ValorDiaria)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.NumHospedes)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Rua)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ValorDiaria)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Rua)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ValorDiaria)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Rua)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Rua)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Complemento)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Bairro)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Complemento)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Numero)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Complemento)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Numero)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Complemento)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Numero)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Numero)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.UF)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cidade)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.UF)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.UF)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.UF)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto1)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Cep)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto1)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Cep)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto2)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto1)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Foto2)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Foto1)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ArCondicionado)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Foto2)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ArCondicionado)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Foto2)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ventilador)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.ArCondicionado)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ventilador)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.ArCondicionado)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Banheira)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ventilador)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Banheira)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Ventilador)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Internet)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Banheira)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Internet)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Banheira)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.TvCabo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Internet)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.TvCabo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Internet)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Animais)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.TvCabo)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Animais)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.TvCabo)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Fumante)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Animais)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fumante)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Animais)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Fumante)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ativo)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Fumante)
+            </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.AnuncioID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+            <dt>
+                @Html.DisplayNameFor(model => model.Ativo)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Ativo)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.AnuncioID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+
+    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+    <!-- JavaScript Libraries -->
+    <script src="~/Content/lib/jquery/jquery.min.js"></script>
+    <script src="~/Content/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/Content/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/Content/lib/venobox/venobox.min.js"></script>
+    <script src="~/Content/lib/knob/jquery.knob.js"></script>
+    <script src="~/Content/lib/wow/wow.min.js"></script>
+    <script src="~/Content/lib/parallax/parallax.js"></script>
+    <script src="~/Content/lib/easing/easing.min.js"></script>
+    <script src="~/Content/lib/nivo-slider/js/jquery.nivo.slider.js" type="text/javascript"></script>
+    <script src="~/Content/lib/appear/jquery.appear.js"></script>
+    <script src="~/Content/lib/isotope/isotope.pkgd.min.js"></script>
+    <!-- Contact Form JavaScript File -->
+    <script src="~/Content/contactform/contactform.js"></script>
+    <script src="~/Content/js/main.js"></script>
+</body>
+</html>

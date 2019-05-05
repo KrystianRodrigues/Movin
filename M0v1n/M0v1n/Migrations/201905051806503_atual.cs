@@ -8,6 +8,17 @@ namespace M0v1n.Migrations
         public override void Up()
         {
             CreateTable(
+                "dbo.Administrador",
+                c => new
+                    {
+                        AdministradorID = c.Int(nullable: false, identity: true),
+                        Nome = c.String(unicode: false),
+                        Email = c.String(unicode: false),
+                        Senha = c.String(unicode: false),
+                    })
+                .PrimaryKey(t => t.AdministradorID);
+            
+            CreateTable(
                 "dbo.Anuncio",
                 c => new
                     {
@@ -37,6 +48,7 @@ namespace M0v1n.Migrations
                         Animais = c.Boolean(nullable: false),
                         Fumante = c.Boolean(nullable: false),
                         Ativo = c.Boolean(nullable: false),
+                        Problemas = c.String(unicode: false),
                         LocadorID = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.AnuncioID)
@@ -104,6 +116,7 @@ namespace M0v1n.Migrations
             DropTable("dbo.Avaliar");
             DropTable("dbo.Locador");
             DropTable("dbo.Anuncio");
+            DropTable("dbo.Administrador");
         }
     }
 }

@@ -49,7 +49,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,LocadorID")] Anuncio anuncio)
+        public ActionResult Create([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,ProblemasLocadorID")] Anuncio anuncio)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace M0v1n.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,LocadorID")] Anuncio anuncio)
+        public ActionResult Edit([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,Problemas,LocadorID")] Anuncio anuncio)
         {
             if (ModelState.IsValid)
             {
@@ -129,6 +129,36 @@ namespace M0v1n.Controllers
             db.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public ActionResult ReportarProblemas(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Anuncio anuncio = db.Anuncios.Find(id);
+            if (anuncio == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
+            //return RedirectToAction("ReportarProblemas", "Anuncios");
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ReportarProblemas([Bind(Include = "AnuncioID,Descricao,QuartoSolteiro,QuartoCasal,QuartoComunitario,QtdCama,QtdBanheiro,NumHospedes,ValorDiaria,Rua,Bairro,Complemento,Numero,Cidade,UF,Cep,Foto1,Foto2,ArCondicionado,Ventilador,Banheira,Internet,TvCabo,Animais,Fumante,Ativo,Problemas,LocadorID")] Anuncio anuncio)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(anuncio).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.LocadorID = new SelectList(db.Locadores, "LocadorID", "NomeLocador", anuncio.LocadorID);
+            return View(anuncio);
         }
 
         protected override void Dispose(bool disposing)

@@ -149,17 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905030521510_atual.cs" />
-    <Compile Include="Migrations\201905030521510_atual.Designer.cs">
-      <DependentUpon>201905030521510_atual.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905051443584_administrador.cs" />
-    <Compile Include="Migrations\201905051443584_administrador.Designer.cs">
-      <DependentUpon>201905051443584_administrador.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201905051448221_admin.cs" />
-    <Compile Include="Migrations\201905051448221_admin.Designer.cs">
-      <DependentUpon>201905051448221_admin.cs</DependentUpon>
+    <Compile Include="Migrations\201905051806503_atual.cs" />
+    <Compile Include="Migrations\201905051806503_atual.Designer.cs">
+      <DependentUpon>201905051806503_atual.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -428,6 +420,7 @@
     <Content Include="Views\Administradores\Details.cshtml" />
     <Content Include="Views\Administradores\Edit.cshtml" />
     <Content Include="Views\Administradores\Index.cshtml" />
+    <Content Include="Views\Anuncios\ReportarProblemas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -446,14 +439,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905030521510_atual.resx">
-      <DependentUpon>201905030521510_atual.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905051443584_administrador.resx">
-      <DependentUpon>201905051443584_administrador.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201905051448221_admin.resx">
-      <DependentUpon>201905051448221_admin.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905051806503_atual.resx">
+      <DependentUpon>201905051806503_atual.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
