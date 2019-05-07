@@ -22,5 +22,9 @@ namespace M0v1n.Models
         [Required(ErrorMessage = "Por favor digite uma breve descrição")]
         [DisplayName("Descrição:")]
         public string Body { get; set; }
+
+        public int AnuncioID { get; set; }
+        public virtual Anuncio anuncio { get; set; }
+
     }
 }

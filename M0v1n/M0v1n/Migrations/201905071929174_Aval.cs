@@ -3,7 +3,7 @@ namespace M0v1n.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class atual : DbMigration
+    public partial class Aval : DbMigration
     {
         public override void Up()
         {
@@ -56,6 +56,21 @@ namespace M0v1n.Migrations
                 .Index(t => t.LocadorID);
             
             CreateTable(
+                "dbo.Avaliar",
+                c => new
+                    {
+                        AvaliarID = c.Int(nullable: false, identity: true),
+                        From = c.String(unicode: false),
+                        To = c.String(nullable: false, unicode: false),
+                        Subject = c.String(unicode: false),
+                        Body = c.String(nullable: false, unicode: false),
+                        AnuncioID = c.Int(nullable: false),
+                    })
+                .PrimaryKey(t => t.AvaliarID)
+                .ForeignKey("dbo.Anuncio", t => t.AnuncioID, cascadeDelete: true)
+                .Index(t => t.AnuncioID);
+            
+            CreateTable(
                 "dbo.Locador",
                 c => new
                     {
@@ -67,18 +82,6 @@ namespace M0v1n.Migrations
                         SenhaLocador = c.String(unicode: false),
                     })
                 .PrimaryKey(t => t.LocadorID);
-            
-            CreateTable(
-                "dbo.Avaliar",
-                c => new
-                    {
-                        AvaliarID = c.Int(nullable: false, identity: true),
-                        From = c.String(unicode: false),
-                        To = c.String(nullable: false, unicode: false),
-                        Subject = c.String(unicode: false),
-                        Body = c.String(nullable: false, unicode: false),
-                    })
-                .PrimaryKey(t => t.AvaliarID);
             
             CreateTable(
                 "dbo.Cancelar",
@@ -110,11 +113,13 @@ namespace M0v1n.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.Anuncio", "LocadorID", "dbo.Locador");
+            DropForeignKey("dbo.Avaliar", "AnuncioID", "dbo.Anuncio");
+            DropIndex("dbo.Avaliar", new[] { "AnuncioID" });
             DropIndex("dbo.Anuncio", new[] { "LocadorID" });
             DropTable("dbo.Usuario");
             DropTable("dbo.Cancelar");
-            DropTable("dbo.Avaliar");
             DropTable("dbo.Locador");
+            DropTable("dbo.Avaliar");
             DropTable("dbo.Anuncio");
             DropTable("dbo.Administrador");
         }

@@ -43,5 +43,7 @@ namespace M0v1n.Models
 
         public int LocadorID { get; set; }
         public virtual Locador Locador { get; set; }
+
+        public virtual ICollection<Avaliar> Avalicoes { get; set; }
     }
 }

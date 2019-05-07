@@ -33,8 +33,23 @@ namespace M0v1n.Repositories
             HttpContext.Current.Session["Usuario"] = usu.EmailUsuario;
             return true;
         }
+        public static bool AutenticarAdm(string login, string senha)
+        {
+            Context _db = new Context();
+            var adm = (from u in _db.Administradores where u.Email == login && u.Senha == senha select u).SingleOrDefault();
+            if (adm == null)
+            {
+                return false;
+            }
 
-       
+            FormsAuthentication.SetAuthCookie(adm.Email, false);
+            //HttpContext.Current.Response.Cookies["Usuario"].Value = query.Email;
+            //HttpContext.Current.Response.Cookies["Usuario"].Expires = DateTime.Now.AddDays(10);
+            HttpContext.Current.Session["Usuario"] = adm.Email;
+            return true;
+        }
+
+
 
         public static Usuario GetUsuario()
         {
@@ -60,6 +75,47 @@ namespace M0v1n.Repositories
             else
             {
                 return null;
+            }
+        }
+        public static Administrador GetAdm()
+        {
+            string _login = HttpContext.Current.User.Identity.Name;
+            //if (HttpContext.Current.Request.Cookies.Count > 0 || HttpContext.Current.Request.Cookies["Usuario"] != null)
+            if (HttpContext.Current.Session.Count > 0 || HttpContext.Current.Session["Usuario"] != null)
+            {
+                _login = HttpContext.Current.Session["Usuario"].ToString();
+                //_login = HttpContext.Current.Request.Cookies["Usuario"].Value.ToString();
+                if (_login == "")
+                {
+                    return null;
+                }
+                else
+                {
+                    Context _db = new Context();
+                    Administrador administrador = (from u in _db.Administradores
+                                       where u.Email == _login
+                                       select u).SingleOrDefault();
+                    return administrador;
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+        public static Administrador GetAdm(string _login)
+        {
+            if (_login == "")
+            {
+                return null;
+            }
+            else
+            {
+                Context _db = new Context();
+                Administrador administrador = (from u in _db.Administradores
+                                   where u.Email == _login
+                                   select u).SingleOrDefault();
+                return administrador;
             }
         }
         public static Usuario GetUsuario(string _login)

@@ -149,9 +149,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201905051806503_atual.cs" />
-    <Compile Include="Migrations\201905051806503_atual.Designer.cs">
-      <DependentUpon>201905051806503_atual.cs</DependentUpon>
+    <Compile Include="Migrations\201905071929174_Aval.cs" />
+    <Compile Include="Migrations\201905071929174_Aval.Designer.cs">
+      <DependentUpon>201905071929174_Aval.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Administrador.cs" />
@@ -336,6 +336,9 @@
     <Content Include="Views\Shared\_Layoutsemlogin.cshtml" />
     <Content Include="Views\Shared\_LayoutLocaIndex.cshtml" />
     <Content Include="Views\Shared\_LayoutUsuIndex.cshtml" />
+    <Content Include="Views\Administradores\LogarAdm.cshtml" />
+    <Content Include="Views\Administradores\AcessoNegadoAdm.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmlog.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -354,8 +357,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201905051806503_atual.resx">
-      <DependentUpon>201905051806503_atual.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201905071929174_Aval.resx">
+      <DependentUpon>201905071929174_Aval.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

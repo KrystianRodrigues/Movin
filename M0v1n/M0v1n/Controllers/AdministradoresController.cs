@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using M0v1n.Models;
+using M0v1n.Repositories;
 
 namespace M0v1n.Controllers
 {
@@ -134,5 +135,32 @@ namespace M0v1n.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult LogarAdm()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult LogarAdm(string email, string senha)
+        {
+            if (Funcoes.AutenticarAdm(email, senha) == false)
+            {
+                ViewBag.Error = "Nome de usuário e/ou senha inválida";
+                return View();
+            }
+            return RedirectToAction("Index", "Administradores");
+        }
+        public ActionResult AcessoNegadoAdm()
+        {
+            using (Context a = new Context())
+            {
+                return View();
+            }
+        }
+        public ActionResult LogoffAdm()
+        {
+            M0v1n.Repositories.Funcoes.Deslogar();
+            return RedirectToAction("LogarAdm", "Administradores");
+        }
+
     }
 }
