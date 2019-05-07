@@ -2,13 +2,11 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutUsuIndex.cshtml";
 }
 
-<h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -17,15 +15,11 @@
         <th>
             @Html.DisplayNameFor(model => model.DataNascimentoUsuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CpfUsuario)
-        </th>
+        
         <th>
             @Html.DisplayNameFor(model => model.EmailUsuario)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.SenhaUsuario)
-        </th>
+        
         <th></th>
     </tr>
 
@@ -37,19 +31,15 @@
         <td>
             @Html.DisplayFor(modelItem => item.DataNascimentoUsuario)
         </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CpfUsuario)
-        </td>
+        
         <td>
             @Html.DisplayFor(modelItem => item.EmailUsuario)
         </td>
+        
         <td>
-            @Html.DisplayFor(modelItem => item.SenhaUsuario)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.UsuarioID }) |
+             
             @Html.ActionLink("Details", "Details", new { id=item.UsuarioID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.UsuarioID })
+            
         </td>
     </tr>
 }

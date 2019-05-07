@@ -63,34 +63,24 @@
                             <!-- Collect the nav links, forms, and other content for toggling -->
                             <div class="collapse navbar-collapse main-menu bs-example-navbar-collapse-1" id="navbar-example">
                                 <div class="nav navbar-nav navbar-right">
-                                    @{
-                                        M0v1n.Models.Usuario usuario = M0v1n.Repositories.Funcoes.GetUsuario();
-                                        M0v1n.Models.Locador locador = M0v1n.Repositories.Funcoes.GetLocador();
 
-                                        if (usuario != null || locador != null)
-                                        {
-                                            <div class="navbar-collapse collapse">
-                                                <ul class="nav navbar-nav">
-                                                    <li>
-                                                        <a class="page-scroll" href="#home">Home</a>
-                                                    </li>
-                                                    <li>@Html.ActionLink("Locadores", "Index", "Locadores")</li>
-                                                    <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
-                                                    <li>@Html.ActionLink("Anuncios", "Index", "Anuncios")</li>
-                                                    <li>
-                                                        <a class="page-scroll" href="#contact">Contato</a>
-                                                    </li>
-                                                    <li>@Html.ActionLink("Sair", "Logoff", "Publico")</li>
-                                                </ul>
-                                            </div>
-                                        }
-                                        else
-                                        {
-                                            <script type="text/javascript">
-                                              window.location.href = "@Url.Action("AcessoNegado","Publico")";
-                                            </script>
-                                        }
-                                    }
+                                    <div class="navbar-collapse collapse">
+                                        <ul class="nav navbar-nav">
+                                            <li>
+                                                <a class="page-scroll" href="#home">Home</a>
+                                            </li>
+                                            <li>@Html.ActionLink("Locadores", "Index", "Locadores")</li>
+                                            <li>@Html.ActionLink("Usuarios", "Index", "Usuarios")</li>
+                                            <li>@Html.ActionLink("Anuncios", "Index", "Anuncios")</li>
+                                            <li>
+                                                <a class="page-scroll" href="#contact">Contato</a>
+                                            </li>
+                                            <li>@Html.ActionLink("Entrar", "Logar", "Publico")</li>
+                                        </ul>
+                                    </div>
+
+
+
                                 </div>
 
                             </div>
@@ -105,14 +95,14 @@
             <div class="bend niceties preview-2">
                 <div id="ensign-nivoslider" class="slides">
 
-                    <img src="~/Content/img/slider/slider1.jpg" alt="" title="#slider-direction-1" />
+                    @*<img src="~/Content/img/slider/slider1.jpg" alt="" title="#slider-direction-1" />*@
 
                     <img src="~/Content/img/slider/slider2.jpg" alt="" title="#slider-direction-2" />
 
-                    <img src="~/Content/img/slider/slider3.jpg" alt="" title="#slider-direction-3" />
+                    @*<img src="~/Content/img/slider/slider3.jpg" alt="" title="#slider-direction-3" />*@
                 </div>
                 <!-- direction 1 -->
-                <div id="slider-direction-1" class="slider-direction slider-one">
+                @*<div id="slider-direction-1" class="slider-direction slider-one">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -127,15 +117,15 @@
                                     </div>
                                     <!-- layer 3 -->
                                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                        <a class="ready-btn right-btn page-scroll" href="~/Views/Anuncios/Index.cshtml">Locações</a>
+                                        <a class="ready-btn right-btn page-scroll" href="~/Views/Usuarios/Create.cshtml">Cadastre-se</a>
                                         @*<a href="~/Views/Usuarios/Create.cshtml">~/Views/Usuarios/Create.cshtml</a>*@
-                                        @*<a class="ready-btn page-scroll" href="#about">Usuário</a>*@
+                @*<a class="ready-btn page-scroll" href="#about">Usuário</a>*@
+                @*</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*@
                 <!-- direction 2 -->
                 <div id="slider-direction-2" class="slider-direction slider-two">
                     <div class="container">
@@ -154,7 +144,7 @@
                                     <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
                                         <a class="ready-btn right-btn page-scroll" href="~/Views/Usuarios/Create.cshtml">Cadastre-se</a>
 
-                                        @*<a class="ready-btn page-scroll" href="#about">Learn More</a>*@
+                                        <a class="ready-btn page-scroll" href="#about">Learn More</a>
                                     </div>
                                 </div>
                             </div>
@@ -162,7 +152,7 @@
                     </div>
                 </div>
                 <!-- direction 3 -->
-                <div id="slider-direction-3" class="slider-direction slider-two">
+                @*<div id="slider-direction-3" class="slider-direction slider-two">
                     <div class="container">
                         <div class="row">
                             <div class="col-md-12 col-sm-12 col-xs-12">
@@ -180,12 +170,12 @@
                                         <a class="ready-btn right-btn page-scroll" href="~/Views/Locadores/Create.cshtml">Cadastre-se</a>
 
                                         @*<a class="ready-btn page-scroll" href="#about">Learn More</a>*@
+                @*</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </div>*@
             </div>
         </div>
 
@@ -209,7 +199,7 @@
     <script src="~/Content/js/main.js"></script>
 </body>
 
-    @RenderBody();
+@RenderBody();
 <div id="contact" class="contact-area">
     <div class="contact-inner area-padding">
         <div class="contact-overly"></div>
@@ -264,3 +254,5 @@
 </div>
 
 </html>
+
+

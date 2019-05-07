@@ -53,7 +53,8 @@
                                     <span class="icon-bar"></span>
                                 </button>
                                 <!-- Brand -->
-                                <a class="navbar-brand page-scroll sticky-logo" href="index.html">
+                                <a class="navbar-brand page-scroll sticky-logo" href="~/Views/Home/Index.cshtml">
+                                    @*<a href="~/Views/Home/Index.cshtml">~/Views/Home/Index.cshtml</a>*@
                                     <h1><span>M</span>ovin</h1>
                                     <!-- Uncomment below if you prefer to use an image logo -->
                                     <!-- <img src="img/logo.png" alt="" title=""> -->
@@ -68,27 +69,28 @@
                                     <li>
                                         <a class="page-scroll" href="#about">Quem somos</a>
                                     </li>
-                                    <li>
+                                    @*<li>
                                         <a class="page-scroll" href="#services">Locações</a>
-                                    </li>
+                                    </li>*@
                                     <li>
                                         <a class="page-scroll" href="#team">Team</a>
                                     </li>
-                                    <li>
+                                    @*<li>
                                         <a class="page-scroll" href="#portfolio">Portfolio</a>
-                                    </li>
-                                    <li class="dropdown">
+                                    </li>*@
+                                    @*<li class="dropdown">
                                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Drop Down<span class="caret"></span></a>
                                         <ul class="dropdown-menu" role="menu">
                                             <li><a href=#>Drop Down 1</a></li>
                                             <li><a href=#>Drop Down 2</a></li>
                                         </ul>
-                                    </li>
-                                    <li>
+                                    </li>*@
+                                    @*<li>
                                         <a class="page-scroll" href="#blog">Blog</a>
-                                    </li>
+                                    </li>*@
                                     <li>
                                         <a class="page-scroll" href="#contact">Contato</a>
+                                        
                                     </li>
                                     <li>
                                         @Html.ActionLink("Entrar", "Logar", "Publico")
@@ -132,8 +134,9 @@
                                 </div>
                                 <!-- layer 3 -->
                                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                    <a class="ready-btn right-btn page-scroll" href="#services">Locador</a>
-                                    <a class="ready-btn page-scroll" href="#about">Usuário</a>
+                                    <a class="ready-btn right-btn page-scroll" href="~/Views/Usuarios/Create.cshtml">Cadastre-se</a>
+                                    @*<a href="~/Views/Usuarios/Create.cshtml">~/Views/Usuarios/Create.cshtml</a>*@
+                                    @*<a class="ready-btn page-scroll" href="#about">Usuário</a>*@
                                 </div>
                             </div>
                         </div>
@@ -156,8 +159,9 @@
                                 </div>
                                 <!-- layer 3 -->
                                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                    <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                                    <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                                    <a class="ready-btn right-btn page-scroll" href="~/Views/Usuarios/Create.cshtml">Cadastre-se</a>
+                                    
+                                    @*<a class="ready-btn page-scroll" href="#about">Learn More</a>*@
                                 </div>
                             </div>
                         </div>
@@ -176,12 +180,13 @@
                                 </div>
                                 <!-- layer 2 -->
                                 <div class="layer-1-2 wow slideInUp" data-wow-duration="2s" data-wow-delay=".1s">
-                                    <h1 class="title2">Anuncie pela Movin</h1>
+                                    <h1 class="title2">Vire um locador com a movin</h1>
                                 </div>
                                 <!-- layer 3 -->
                                 <div class="layer-1-3 hidden-xs wow slideInUp" data-wow-duration="2s" data-wow-delay=".2s">
-                                    <a class="ready-btn right-btn page-scroll" href="#services">See Services</a>
-                                    <a class="ready-btn page-scroll" href="#about">Learn More</a>
+                                    <a class="ready-btn right-btn page-scroll" href="~/Views/Locadores/Create.cshtml">Cadastre-se</a>
+                                    
+                                    @*<a class="ready-btn page-scroll" href="#about">Learn More</a>*@
                                 </div>
                             </div>
                         </div>
@@ -555,7 +560,7 @@
         </div>*@
     <!-- End Wellcome Area -->
     <!-- Start team Area -->
-    @*<div id="team" class="our-team-area area-padding">
+    <div id="team" class="our-team-area area-padding">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -597,7 +602,7 @@
                                 <p>Seo</p>
                             </div>
                         </div>
-                    </div>*@
+                    </div>
     <!-- End column -->
     @*<div class="col-md-3 col-sm-3 col-xs-12">
             <div class="single-team-member">
@@ -663,7 +668,7 @@
                     <p>Web Design</p>
                 </div>
             </div>
-        </div>*@
+        </div*@>
     <!-- End column -->
     @*<div class="col-md-3 col-sm-3 col-xs-12">
             <div class="single-team-member">
@@ -698,10 +703,10 @@
             </div>
         </div>*@
     <!-- End column -->
-    @*</div>
+    </div>
                 </div>
             </div>
-        </div>*@
+        </div>
     <!-- End Team Area -->
     <!-- Start reviews Area -->
     @*<div class="reviews-area hidden-xs">
@@ -1100,7 +1105,7 @@
         </div>*@
     <!-- End Suscrive Area -->
     <!-- Start contact Area -->
-    @*<div id="contact" class="contact-area">
+    <div id="contact" class="contact-area">
         <div class="contact-inner area-padding">
             <div class="contact-overly"></div>
             <div class="container ">
@@ -1111,45 +1116,48 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">*@
-    <!-- Start contact icon column -->
-    @*<div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-                <div class="single-icon">
-                    <i class="fa fa-mobile"></i>
-                    <p>
-                        Call: +1 5589 55488 55<br>
-                        <span>Monday-Friday (9am-5pm)</span>
-                    </p>
-                </div>
-            </div>
-        </div>*@
-    <!-- Start contact icon column -->
-    @*<div class="col-md-4 col-sm-4 col-xs-12">
-            <div class="contact-icon text-center">
-                <div class="single-icon">
-                    <i class="fa fa-envelope-o"></i>
-                    <p>
-                        Email: info@example.com<br>
-                        <span>Web: www.example.com</span>
-                    </p>
-                </div>
-            </div>
-        </div>*@
-    <!-- Start contact icon column -->
-    @*<div class="col-md-4 col-sm-4 col-xs-12">
-                <div class="contact-icon text-center">
-                    <div class="single-icon">
-                        <i class="fa fa-map-marker"></i>
-                        <p>
-                            Location: A108 Adam Street<br>
-                            <span>NY 535022, USA</span>
-                        </p>
+                <div class="row">
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i class="fa fa-mobile"></i>
+                                <p>
+                                    Call: +1 5589 55488 55<br>
+                                    <span>Segunda-Sexta (9:00-17:00)</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i class="fa fa-envelope-o"></i>
+                                <p>
+                                    Email: Movinlocacoes@gmail.com<br>
+                                    <span>Movin.com.br</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start contact icon column -->
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="contact-icon text-center">
+                            <div class="single-icon">
+                                <i class="fa fa-map-marker"></i>
+                                <p>
+                                    Location: Casemiro Rocha<br>
+                                    <span>Cunha, SP  BR</span>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row">*@
+    </div>
+        @*<div class="row">*@
     <!-- Start Google Map -->
     @*<div class="col-md-6 col-sm-6 col-xs-12">*@
     <!-- Start Map -->
