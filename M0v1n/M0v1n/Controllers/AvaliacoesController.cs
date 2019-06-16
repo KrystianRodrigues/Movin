@@ -107,7 +107,7 @@ namespace M0v1n.Controllers
                 smtp.Port = 587;
                 smtp.UseDefaultCredentials = false;
                 smtp.Credentials = new System.Net.NetworkCredential
-                ("mandajudaservico@gmail.com", "Mand@judaPI");
+                ("movinlocacoes@gmail.com", "Movin");
                 smtp.EnableSsl = true;
                 smtp.Send(mail);
 

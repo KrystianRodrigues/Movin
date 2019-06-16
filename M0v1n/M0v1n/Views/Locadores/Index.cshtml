@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_LayoutLocaIndex.cshtml";
 }
 
-
+<div>
 <table class="table">
     <tr>
         <th>
@@ -21,7 +21,7 @@
         
         <th></th>
     </tr>
-
+    
 @foreach (var item in Model) {
     <tr>
         <td>
@@ -37,10 +37,11 @@
         
         <td>
             |
-            @Html.ActionLink("Details", "Details", new { id=item.LocadorID }) |
+            @Html.ActionLink("Perfil", "Details", new { id=item.LocadorID }) |
            
         </td>
     </tr>
 }
 
 </table>
+    </div>

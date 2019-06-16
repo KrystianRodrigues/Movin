@@ -2,17 +2,18 @@
 
 @{
     ViewBag.Title = "Edit";
+
 }
 
-<h2>Edit</h2>
+
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
-        <h4>Locador</h4>
+        
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @Html.HiddenFor(model => model.LocadorID)
@@ -36,7 +37,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CpfLocador, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.CpfLocador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.CpfLocador, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.CpfLocador, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -52,7 +53,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.SenhaLocador, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.SenhaLocador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.HiddenFor(model => model.SenhaLocador, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.SenhaLocador, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -64,11 +65,30 @@
         </div>
     </div>
 }
+    <div class="form">
+        <div>
+            @{ 
+                    M0v1n.Models.Locador locador = M0v1n.Repositories.Funcoes.GetLocador();
+                    M0v1n.Models.Anuncio anuncio = M0v1n.Re();
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+                    if (locador == )
+                    {
+            <ul class="aligncenter">
+                <li>
+                    <a  class="btn blog-btn" href="@Url.Action("Edit", "Anuncios", new { id = locador.LocadorID })">Meus Anuncios</a>
+                </li>
+            </ul>
+                    }
+                }
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+        </div>
+       
+    </div>
+
+
+
+
+            
+
+
+

@@ -36,7 +36,7 @@ namespace M0v1n.Repositories
             //não pode ser conta com login em 2 etapas
             //dar permissão em https://www.google.com/settings/security/lesssecureapps
             _config = new SmtpConfiguration();
-            var gmailUserName = "startoupcontact@gmail.com";
+            var gmailUserName = "movinlocacoes@gmail.com";
             var gmailPassword = "@DDCG2019";
             var gmailHost = "smtp.gmail.com";
             var gmailPort = 587;

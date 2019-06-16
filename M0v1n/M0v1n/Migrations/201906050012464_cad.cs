@@ -3,7 +3,7 @@ namespace M0v1n.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class Aval : DbMigration
+    public partial class cad : DbMigration
     {
         public override void Up()
         {

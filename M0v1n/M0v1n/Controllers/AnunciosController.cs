@@ -21,6 +21,11 @@ namespace M0v1n.Controllers
             var anuncios = db.Anuncios.Include(a => a.Locador).Where(s => s.Ativo == true).ToList();
             return View(anuncios.ToList());
         }
+        public ActionResult Locacoes()
+        {
+            var anuncios = db.Anuncios.Include(a => a.Locador).Where(s => s.Ativo == true).ToList();
+            return View(anuncios.ToList());
+        }
 
         // GET: Anuncios/Details/5
         public ActionResult Details(int? id)
